@@ -1,5 +1,5 @@
 SiteClienteEnquetes::Application.routes.draw do
-  post "votes/create"
+  resources :votes, :only => :create
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
