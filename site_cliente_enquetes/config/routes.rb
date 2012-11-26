@@ -1,5 +1,9 @@
+require 'sidekiq/web'
+
 SiteClienteEnquetes::Application.routes.draw do
   resources :votes, :only => :create
+
+  mount Sidekiq::Web, at: "/sidekiq"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
